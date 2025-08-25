@@ -1,0 +1,32 @@
+[project]
+name = "crawler"
+version = "1.0.0"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Mitja Kramberger", email = "mitja.kramberger@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "click>=8.1.0",
+    "pydantic>=2.0.0",
+    "aiohttp>=3.9.0",
+    "beautifulsoup4>=4.12.0",
+    "lxml>=4.9.0",
+    "loguru>=0.7.3",
+]
+
+[project.scripts]
+crawler = "crawler:main"
+
+[build-system]
+requires = ["uv_build>=0.8.13,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "pytest-asyncio>=1.1.0",
+    "ruff>=0.12.10",
+    "ty>=0.0.1a19",
+]

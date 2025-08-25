@@ -1,0 +1,9 @@
+from typing import Protocol
+
+from crawler.collector.models import PageResult
+
+
+class Collector(Protocol):
+    async def __aenter__(self) -> "Collector": ...
+    async def __aexit__(self, exc_type, exc, tb) -> bool: ...
+    async def fetch_page(self, url: str) -> PageResult: ...
